@@ -1,6 +1,12 @@
+html{          
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
 body{
     margin: 0;
     font-family: 'Hanken Grotesk', Helvetica, sans-serif;
+    font-weight: 1000;
 }
 
 header {
@@ -23,6 +29,7 @@ header .logo img {
 }
 
 .navbar {
+    display: none;
     position: absolute;
     top: 0;
     left: 100%;
@@ -35,11 +42,12 @@ header .logo img {
 }
 
 .navbar.show {
+    display: block;
     left: 0 !important;
 }
 
 .hide-scroll {
-    overflow: hidden;
+    overflow-y: hidden;
 }
 
 .navbar ul {
@@ -70,10 +78,10 @@ header .logo img {
 }
 .close-nav button {
     all: unset;
-    background: #f7f7f7;
+    background: transparent;
     font-size: 42px;
     cursor: pointer;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: none;
     padding: 5px;
     padding-left: 20px;
     padding-right: 20px;
@@ -87,13 +95,12 @@ header .logo img {
 }
 
 .menu-bar button {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background: #f7f7f7;
+    border: none;
+    background: transparent;
     height: 50px;
     width: 50px;
     padding: 5px 10px;
     cursor: pointer;
-    border-radius: 3px;
 }
 .menu-bar i {
     display: block;
@@ -137,6 +144,7 @@ header .logo img {
     display: flex;
     justify-content: center;
     align-items: center; 
+    height: 100vh;
 }
 
 .logo_anim {
