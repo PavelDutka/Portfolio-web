@@ -32,14 +32,23 @@
     </header>
     <script>
         const theBody = document.querySelector('body');
-        const openNav = document.querySelector('.menu-bar button');
-        const closeNav = document.querySelector('.close-nav button');
-        const Navbar = document.querySelector('.navbar');
-    
-        function showHide(){
-            Navbar.classList.toggle('show');
-            bodyScroll();
+    const openNav = document.querySelector('.menu-bar button');
+    const closeNav = document.querySelector('.close-nav button');
+    const Navbar = document.querySelector('.navbar');
+
+    function bodyScroll(){
+        if(Navbar.classList.contains('show')){
+            theBody.classList.add('hide-scroll');
         }
+        else if(theBody.classList.contains('hide-scroll')){
+            theBody.classList.remove('hide-scroll');
+        }
+    }
+
+    function showHide(){
+        Navbar.classList.toggle('show');
+        bodyScroll();
+    }
     
         openNav.onclick = showHide;
         closeNav.onclick = showHide;
@@ -52,10 +61,39 @@
 </section>
     
 <section class="about-me">
-    <div class="about-me--content">
-        <h2>About Me</h2>
-        <p>Hi, I'm Pavel and I'm currently studying cyber security and IOT at SPŠSE a VOŠ Liberec. In this portfolio I will show you some of my projects to demonstrate what I can do. I hope you enjoy.</p>
+    <div class="about-me_container">
+        <div class="about-me--content">
+            <h2>About Me</h2>
+            <p>Hi, I'm Pavel and I'm currently studying cyber security and IOT at SPŠSE a VOŠ Liberec. In this portfolio I will show you some of my projects to demonstrate what I can do. I hope you enjoy.</p>
+        </div>
+        <div class="line"></div>
+        <div class="about-me--skills">
+            <ul>
+                <li>
+                  Blender <progress max="100" value="100"></progress><br>
+                </li>
+                <li>
+                    Gimp <progress max="100" value="60"></progress><br>
+                  </li>
+                  <li>
+                    Inkscape <progress max="100" value="100"></progress>
+                  </li>
+                  <li>
+                    Cavalry <progress max="100" value="70"></progress><br>
+                  </li>
+                  <li>
+                    Resolve <progress max="100" value="90"></progress>
+                  </li>
+                  <li>
+                    Unreal <progress max="100" value="70"></progress>
+                  </li>
+              </ul>
+        </div>
     </div>
+</section>
+
+<section class="modeling">
+    <h2>3D modeling</h2>
 </section>
 </body>
 </html>
