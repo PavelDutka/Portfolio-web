@@ -151,6 +151,8 @@ header .logo img {
     position: relative;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
         0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+    margin: -10px;
 }
 
 .logo_anim {
@@ -184,6 +186,10 @@ header .logo img {
   .about-me__content{
     margin: 20px;
     width: 50%;
+  }
+
+  section{
+    margin: 10px;
   }
 
   .about-me__skills{
@@ -225,7 +231,7 @@ header .logo img {
     background-color: #f5f5f5;
     max-width: 1200px;
 }
-.modeling{
+.section__left{
     background-color: #f5f5f5;
 }
 
@@ -241,10 +247,6 @@ h2{
 
 .animation__container p{
     max-width: 1200px;
-}
-
-.animation{
-    margin-top: -200px;
 }
 
 
@@ -306,6 +308,10 @@ section{
 
    @media only screen and (min-width: 1200px) {
     .modeling__container{
-        margin-left: 40vw;
+        float: right;
+    }
+
+    .section__right{
+        float: left;
     }
   }
