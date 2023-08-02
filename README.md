@@ -1,2 +1,2 @@
 # Portfolio-web
-paveldutka.com
+https://paveldutka.com/
