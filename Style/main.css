@@ -42,6 +42,11 @@ header .logo img {
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(8px);
     z-index: 99;
+    transition: opacity 0.3s ease-out;
+}
+
+.hide-delay {
+  opacity: 0;
 }
 
 .navbar.show {

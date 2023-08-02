@@ -55,6 +55,14 @@
   function showHide() {
       Navbar.classList.toggle('show');
       bodyScroll();
+
+      if (!Navbar.classList.contains('show')) {
+            setTimeout(() => {
+                Navbar.classList.add('hide-delay');
+            }, 300); // 300ms delay before adding the hide-delay class
+        } else {
+            Navbar.classList.remove('hide-delay');
+        }
   }
 
   openNav.onclick = showHide;
