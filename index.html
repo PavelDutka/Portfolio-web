@@ -28,7 +28,7 @@
                     <ul>
                         <li><a href="#about-me">About me</a></li>
                         <li><a href="#skills">Skills</a></li>
-                        <li><a href="#gallery">Gallery/a></li>
+                        <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
@@ -43,6 +43,7 @@
     const openNav = document.querySelector('.menu-bar button');
     const closeNav = document.querySelector('.close-nav button');
     const Navbar = document.querySelector('.navbar');
+    const menuItem = document.querySelector('li a')
 
     function bodyScroll(){
         if(Navbar.classList.contains('show')){
@@ -60,6 +61,10 @@
     
         openNav.onclick = showHide;
         closeNav.onclick = showHide;
+
+      function hide(){
+        menuItem.onclick = Navbar.classList.toggle('hide')
+      }
     </script>
 
 <section class="video" id="video">
