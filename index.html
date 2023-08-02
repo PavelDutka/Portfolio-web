@@ -22,7 +22,7 @@
             <div class="logo">
                 <a href="index.html"><img src="./images/PD_logo.svg" alt="logo"></a>
             </div>
-            <div class="navbar">
+            <div class="navbar hide-delay">
                 <div class="close-nav"><button>×</button></div>
                 <nav>
                     <ul>
@@ -53,18 +53,20 @@
         }
     }
 
-    function showHide() {
-        Navbar.classList.toggle('show');
-        bodyScroll();
+     function showHide() {
+    Navbar.classList.toggle('show');
+    bodyScroll();
 
-        if (!Navbar.classList.contains('show')) {
-            setTimeout(() => {
-                Navbar.classList.add('hide-delay');
-            }, 300); // 300ms delay before adding the hide-delay class
-        } else {
-            Navbar.classList.remove('hide-delay');
-        }
+    if (!Navbar.classList.contains('show')) {
+      setTimeout(() => {
+        Navbar.classList.add('hide-delay');
+        Navbar.style.opacity = 0;
+      }, 300); // 300ms delay before adding the hide-delay class and setting opacity to 0
+    } else {
+      Navbar.style.opacity = 1;
+      Navbar.classList.remove('hide-delay');
     }
+  }
 
     openNav.onclick = showHide;
     closeNav.onclick = showHide;
@@ -168,9 +170,9 @@ window.addEventListener('scroll', fadeInOnScroll);
     
 </div>
 
-<h3>Gallery</h3>
+<h3 id="gallery">Gallery</h3>
 
-<div id="gallery" class="gallery__container">
+<div class="gallery__container">
   <div class="gallery">
     <article class='gallery'>
         
