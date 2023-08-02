@@ -23,50 +23,50 @@
                 <a href="index.html"><img src="./images/PD_logo.svg" alt="logo"></a>
             </div>
             <div class="navbar">
-                <div class="close-nav"><button>×</button></div>
-                <nav>
-                    <ul>
-                        <li><a href="#about-me">About me</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="menu-bar">
-                <button><i></i></button>
-            </div>
-        </div>
-    </header>
-    <script>
-        const theBody = document.querySelector('body');
+    <div class="close-nav"><button>×</button></div>
+    <nav>
+        <ul>
+            <li><a href="#about-me">About me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="menu-bar">
+    <button><i></i></button>
+</div>
+
+<script>
+    const theBody = document.querySelector('body');
     const openNav = document.querySelector('.menu-bar button');
     const closeNav = document.querySelector('.close-nav button');
     const Navbar = document.querySelector('.navbar');
-    const menuItem = document.querySelector('li a')
+    const menuItems = document.querySelectorAll('li a');
 
-    function bodyScroll(){
-        if(Navbar.classList.contains('show')){
+    function bodyScroll() {
+        if (Navbar.classList.contains('show')) {
             theBody.classList.add('hide-scroll');
-        }
-        else if(theBody.classList.contains('hide-scroll')){
+        } else if (theBody.classList.contains('hide-scroll')) {
             theBody.classList.remove('hide-scroll');
         }
     }
 
-    function showHide(){
+    function showHide() {
         Navbar.classList.toggle('show');
         bodyScroll();
     }
-    
-        openNav.onclick = showHide;
-        closeNav.onclick = showHide;
 
-      function hide(){
-        menuItem.onclick = Navbar.classList.toggle('hide')
-      }
-    </script>
+    openNav.onclick = showHide;
+    closeNav.onclick = showHide;
 
+    // Add event listeners to each menu item
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            showHide();
+        });
+    });
+</script>
 <section class="video" id="video">
     <video autoplay muted class="logo_anim">
       <source src="./images/Animation.mp4" type="video/mp4">
