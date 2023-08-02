@@ -23,59 +23,118 @@
                 <a href="index.html"><img src="./images/PD_logo.svg" alt="logo"></a>
             </div>
             <div class="navbar">
-    <div class="close-nav"><button>×</button></div>
-    <nav>
-        <ul>
-            <li><a href="#about-me">About me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-</div>
-<div class="menu-bar">
-    <button><i></i></button>
-</div>
+                <div class="close-nav"><button>×</button></div>
+                <nav>
+                    <ul>
+                        <li><a href="#about-me">About me</a></li>
+			<li><a href="#skills">Skills</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="menu-bar">
+                <button><i></i></button>
+            </div>
+        </div>
+    </header>
+    <script>
+    const theBody = document.querySelector('body');
+    const openNav = document.querySelector('.menu-bar button');
+    const closeNav = document.querySelector('.close-nav button');
+    const Navbar = document.querySelector('.navbar');
+    const menuItems = document.querySelectorAll('li a');
 
-<script>
-  const theBody = document.querySelector('body');
-  const openNav = document.querySelector('.menu-bar button');
-  const closeNav = document.querySelector('.close-nav button');
-  const Navbar = document.querySelector('.navbar');
-  const menuItems = document.querySelectorAll('li a');
+    function bodyScroll() {
+        if (Navbar.classList.contains('show')) {
+            theBody.classList.add('hide-scroll');
+        } else if (theBody.classList.contains('hide-scroll')) {
+            theBody.classList.remove('hide-scroll');
+        }
+    }
 
-  function bodyScroll() {
-      if (Navbar.classList.contains('show')) {
-          theBody.classList.add('hide-scroll');
-      } else if (theBody.classList.contains('hide-scroll')) {
-          theBody.classList.remove('hide-scroll');
-      }
-  }
+    function showHide() {
+        Navbar.classList.toggle('show');
+        bodyScroll();
 
-  function showHide() {
-      Navbar.classList.toggle('show');
-      bodyScroll();
-
-      if (!Navbar.classList.contains('show')) {
+        if (!Navbar.classList.contains('show')) {
             setTimeout(() => {
                 Navbar.classList.add('hide-delay');
             }, 300); // 300ms delay before adding the hide-delay class
         } else {
             Navbar.classList.remove('hide-delay');
         }
-  }
+    }
 
-  openNav.onclick = showHide;
-  closeNav.onclick = showHide;
+    openNav.onclick = showHide;
+    closeNav.onclick = showHide;
 
-  // Add event listeners to each menu item
-  menuItems.forEach(item => {
-      item.addEventListener('click', () => {
-          showHide();
-      });
-  });
+    // Add event listeners to each menu item
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            showHide();
+        });
+    });
 </script>
 
+<section class="video" id="video">
+    <video autoplay muted class="logo_anim">
+      <source src="./images/Animation.mp4" type="video/mp4">
+    </video>
+
+    <a id="scroll-btn" href="#section-2"></a>
+</section>
+    
+<div class="container">
+    <div class="content__wrapper">¨
+        <section id="about-me" class="about-me">
+            <div class="about-me_container">
+                <div class="about-me__content">
+                    <h2>About Me</h2>
+                    <p>Hi, I'm Pavel and I'm currently studying cyber security and IOT at SPŠSE a VOŠ Liberec. In this portfolio I will show you some of my projects to demonstrate what I can do. I hope you enjoy.</p>
+                </div>
+                <div class="line"></div>
+                <div class="about-me__skills">
+                    <ul>
+                        <li>
+                          Blender <progress max="100" value="100"></progress><br>
+                        </li>
+                        <li>
+                            Gimp <progress max="100" value="60"></progress><br>
+                          </li>
+                          <li>
+                            Inkscape <progress max="100" value="100"></progress>
+                          </li>
+                          <li>
+                            Cavalry <progress max="100" value="70"></progress><br>
+                          </li>
+                          <li>
+                            Resolve <progress max="100" value="90"></progress>
+                          </li>
+                          <li>
+                            Unreal <progress max="100" value="70"></progress>
+                          </li>
+                      </ul>
+                </div>
+            </div>
+        </section>
+
+        <script>
+function fadeInOnScroll() {
+  var sections = document.querySelectorAll('.scroll-effect');
+
+  sections.forEach(function(section) {
+    var sectionPosition = section.getBoundingClientRect().top;
+    var windowHeight = window.innerHeight;
+
+    if (sectionPosition < windowHeight) {
+      section.classList.add('fade-in');
+    }
+  });
+}
+
+window.addEventListener('scroll', fadeInOnScroll);
+        </script>
         
         <section id="skills" class="section__left skill scroll-effect">
             <div class="modeling__container">
@@ -111,7 +170,7 @@
 
 <h3>Gallery</h3>
 
-<div id="skills" class="gallery__container">
+<div id="gallery" class="gallery__container">
   <div class="gallery">
     <article class='gallery'>
         
