@@ -23,7 +23,7 @@
                 <a href="index.html"><img src="./images/PD_logo.svg" alt="logo"></a>
             </div>
             <div class="navbar">
-                <div class="close-nav"><button>×</button></div>
+                <div class="close-nav"><button aria-label="menu">×</button></div>
                 <nav>
                     <ul>
                         <li><a href="#about-me">About me</a></li>
@@ -34,38 +34,42 @@
                 </nav>
             </div>
             <div class="menu-bar">
-                <button><i></i></button>
+                <button aria-label="menu"><i></i></button>
             </div>
         </div>
     </header>
     <script>
     const theBody = document.querySelector('body');
-    const openNav = document.querySelector('.menu-bar button');
-    const closeNav = document.querySelector('.close-nav button');
-    const Navbar = document.querySelector('.navbar');
-    const menuItems = document.querySelectorAll('li a');
+const openNav = document.querySelector('.menu-bar button');
+const closeNav = document.querySelector('.close-nav button');
+const Navbar = document.querySelector('.navbar');
+const menuItems = document.querySelectorAll('li a');
+const isMobile = window.innerWidth <= 768;
 
-    function bodyScroll() {
-        if (Navbar.classList.contains('show')) {
-            theBody.classList.add('hide-scroll');
-        } else if (theBody.classList.contains('hide-scroll')) {
-            theBody.classList.remove('hide-scroll');
-        }
+function bodyScroll() {
+    if (Navbar.classList.contains('show')) {
+        theBody.classList.add('hide-scroll');
+    } else if (theBody.classList.contains('hide-scroll')) {
+        theBody.classList.remove('hide-scroll');
     }
+}
 
-    function showHide() {
-        Navbar.classList.toggle('show');
-        bodyScroll();
-    }
+function showHide() {
+    Navbar.classList.toggle('show');
+    bodyScroll();
+}
 
-    openNav.onclick = showHide;
-    closeNav.onclick = showHide;
+openNav.onclick = showHide;
+closeNav.onclick = showHide;
 
-    menuItems.forEach(item => {
-        item.addEventListener('click', () => {
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        if (isMobile) {
             showHide();
-        });
+        }
     });
+});
+
 </script>
 
 <section class="video" id="video">
@@ -270,11 +274,10 @@ window.addEventListener('scroll', fadeInOnScroll);
         <h3>Footer</h3>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo iste corrupti doloribus odio sed!</p>
         <ul class="socials">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa fa-art-station"></i></a></li>
-            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            <li><a href="#" aria-label="facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/pavel_dutka/" aria-label="instagram"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://github.com/PavelDutka"><i class="fa fa-github" aria-label="github"></i></a></li>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" aria-label="youtube"><i class="fa fa-youtube"></i></a></li>
         </ul>
     </div>
     <div class="footer-bottom">
