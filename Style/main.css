@@ -215,125 +215,6 @@ font-weight: 600;
 section {
   scroll-snap-align: start;
 }
-
-
-.about-me{
-  background-color: #f5f5f5;
-  height: 400px;
-}
-
-.about-me_container{    
-  display: flex;
-  align-items: end;
-  background-color: #f5f5f5;
-}
-
-
-.about-me__content{
-  margin: 20px;
-  width: 50%;
-}
-
-section{
-  margin: 10px;
-}
-
-.about-me__skills{
-  margin-block-start: 70px;
-  margin-inline-start: -30px;
-  text-align: end;
-}
-
-li{
-  list-style-type:none;
-}
-
-progress {
-  position: absolute;
-  block-size: 7px;
-  inline-size: 50px;
-  margin-inline-start: 20px;
-  margin-top: 7px;
-}
-progress::-webkit-progress-bar {
-  background-color: rgb(179, 179, 179);
-}
-progress::-webkit-progress-value {
-  background-color: rgb(0, 67, 78);
-}
-progress[value] {
- border-radius: 0;
- border: none;
-}
-
-
-.line{    
-  border: 2px solid rgb(170, 170, 170);
-  height: 140px;
-}
-
-.modeling__container{
-  height: 700px;
-  background-color: transparent;
-  max-width: 1200px;
-}
-
-.archviz__container{
-height: 700px;
-background-color: #f5f5f5;
-max-width: 1200px;
-margin: 0;
-}
-.section__left{
-  background-color: #f5f5f5;
-}
-
-.img__boeing{
-  height: 50%;
-  margin-top: -200px;
-}
-
-h2{
-  
-}
-.modeling__container{
-  margin-left: 0;
-}
-
-
-.animation__container p{
-  max-width: 1200px;
-}
-
-
-.img__ES{
-  width: 100%;
-  border-radius: 20px;
-  position: relative;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-      0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  
-}
-
-.container{
-  display: block;
-}
-
-
-.skill{
-margin: 20px;
-}
-
-
-.content__wrapper{
-  display: block;
-}
-
-.img__archviz{
-  width: 100%;
-  border-radius: 20px;
-}
-
 footer{
   background: #202020;
   height: auto;
@@ -414,10 +295,6 @@ margin: auto;
 margin-bottom: 20px;
 }
 
-.modeling__container{
-}
-
-
 @media only screen and (min-width: 600px) {
 
 
@@ -425,59 +302,6 @@ margin-bottom: 20px;
   pointer-events: all;
   cursor: pointer;
 }
-
-
-
-  .about-me_container{
-      display: flex;
-      justify-content: center;
-  }
-
-  .about-me--skills{
-      padding-right: 200px;
-  }
-
-  progress{
-  }
-
-  .img__boeing{
-      float: right;
-      height: 100%;
-  }
-
-
-  .img__boeing{
-      float: left;
-
-  }
-
-  .img__ES{
-      width: 700px;
-  }
-
-  .img__archviz{
-      width: 400px;
-      float: right;
-  }
-}
-
- @media only screen and (min-width: 1200px) {
-
-  .gallery__container{
-    width: 70%;
-    margin: auto;
-  }
-
-  .section__left{
-    width: 1000px;
-    margin-left: auto;
-    margin-right: 0;
-  }
-
-  
-  
-
-  
 }
 
 @media only screen and (min-width: 1600px) {
@@ -485,13 +309,6 @@ margin-bottom: 20px;
       width: 70%;
   }
 
-  .container{
- 
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      justify-content: center;
-  }
 }
 
 
@@ -725,18 +542,121 @@ button.mfp-close:active {
 }
 
 
-@keyframes slideInFromLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
+.skills {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skills__content {
+  margin-right: 1.5em;
+  margin-left: 1.5em;
+  gap: 2em;
+}
+
+.skills__item .item__description {
+  font-weight: 400;
+  font-size: 1.1rem;
+  margin-bottom: 1em;
+  font-size: 1em;
+}
+
+.skills__item .item__title {
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.skills__item {
+  display: flex;
+  
+  flex-direction: column;
+  margin-bottom: 4em;
+}
+
+.skills__item--header {
+  display: block;
+  margin: 5em 0em;
+}
+
+.skills__item::before{
+  border-radius: 15px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+
+.skills__item--img-modeling::before, .skills__item--img-anim::before, .skills__item--img-archviz::before, .skills__item--img-product::before{
+  content: '';
+  display: block;
+  min-height: 10em;
+  background-image: unset;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.skills__item--img-modeling::before {
+  background-image: url(../images/Boeing_737.png);
+  background-position: center;
+}
+
+
+.skills__item--img-anim::before {
+  background: url(../images/EndlessEngines.jpg);
+  background-position: center;
+}
+
+.skills__item--img-archviz::before {
+  background: url(../images/Archviz.jpg);
+  background-position: center;
+}
+
+.skills__item--img-product::before {
+  background: url(../images/Pen.jpg);
+  background-position: center;
+}
+
+
+
+@media (min-width: 768px) {
+
+
+
+  .skills__item--header {
+      margin: 5em 0em;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      font-size: 1.5em;
   }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
+  .skills__item::before{
+      min-height: 20em;
   }
 }
 
-.section__left.skill.scroll-effect {
-  opacity: 0;
-  animation: slideInFromLeft 0.5s forwards;
+
+@media screen and (min-width: 901px) {
+  .skills__item {
+      gap: 4em;
+      flex-direction: row;
+  }
+
+  .skills__item:nth-child(odd)::before{
+      order: 2;
+  }
+
+  .skills__item::before {
+      flex: 1;
+      min-height: 20em;
+      background-position: center;
+  }
+  
+  .item__flex {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+  }
 }

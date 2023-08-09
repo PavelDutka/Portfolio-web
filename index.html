@@ -12,8 +12,8 @@
     <link rel="icon" href="./images/PD_logo.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:300,600'>
+    
+   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:300,600'>
 <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css'>
 
 </head>
@@ -81,92 +81,50 @@ menuItems.forEach(item => {
     <a id="scroll-btn" href="#section-2"></a>
 </section>
     
-<div class="container">
-    <div class="content__wrapper">¨
-        <section id="about-me" class="about-me">
-            <div class="about-me_container">
-                <div class="about-me__content">
-                    <h2>About Me</h2>
-                    <p>Hi, I'm Pavel and I'm currently studying cyber security and IOT at SPŠSE a VOŠ Liberec. In this portfolio I will show you some of my projects to demonstrate what I can do. I hope you enjoy.</p>
-                </div>
-                <div class="line"></div>
-                <div class="about-me__skills">
-                    <ul>
-                        <li>
-                          Blender <progress max="100" value="100"></progress><br>
-                        </li>
-                        <li>
-                            Gimp <progress max="100" value="60"></progress><br>
-                          </li>
-                          <li>
-                            Inkscape <progress max="100" value="100"></progress>
-                          </li>
-                          <li>
-                            Cavalry <progress max="100" value="70"></progress><br>
-                          </li>
-                          <li>
-                            Resolve <progress max="100" value="90"></progress>
-                          </li>
-                          <li>
-                            Unreal <progress max="100" value="70"></progress>
-                          </li>
-                      </ul>
-                </div>
-            </div>
-        </section>
 
-        <script>
-function fadeInOnScroll() {
-  var sections = document.querySelectorAll('.scroll-effect');
 
-  sections.forEach(function(section) {
-    var sectionPosition = section.getBoundingClientRect().top;
-    var windowHeight = window.innerHeight;
+<section class="skills" id="about-me">
+  <div class="skills__content">
+      <div class="skills__item skills__item--header">
+          <div class="item__flex">
+              <p class="item__title">About me</p>
+              <p class="item__description">Hi, I'm Pavel and I'm currently studying cyber security and IOT at SPŠSE a VOŠ Liberec. In this portfolio I will show you some of my projects to demonstrate what I can do. I hope you enjoy.</p>
+          </div>
+      </div>
 
-    if (sectionPosition < windowHeight) {
-      section.classList.add('fade-in');
-    }
-  });
-}
-
-window.addEventListener('scroll', fadeInOnScroll);
-        </script>
-        
-        <section id="skills" class="section__left skill scroll-effect">
-            <div class="modeling__container">
-                <h2>3D modeling</h2>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam ante. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Curabitur vitae diam non enim vestibulum interdum. Pellentesque sapien. Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Aenean vel massa quis mauris vehicula lacinia. Aliquam ante. In enim a arcu imperdiet malesuada. Nullam feugiat.</p>
-            <img class="img__boeing" src="./images/737.png" alt="Boeing 737">
-            </div>
-        </section>
-        
-        <section id="animation" class="section__right skill scroll-effect">
-            <div class="animation__container">
-                <h2>Animation</h2>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam ante. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Curabitur vitae diam non enim vestibulum interdum. Pellentesque sapien. Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Aenean vel massa quis mauris vehicula lacinia. Aliquam ante. In enim a arcu imperdiet malesuada. Nullam feugiat.</p>
-            <img class="img__ES" src="./images/EndlessEngines.jpg" alt="EndlessEngines challenge">
-            </div>
-        </section>
-        
-        <section id="archviz" class="section__left skill scroll-effect">
-            <div class="archviz__container">
-                <h2>Archviz</h2>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam ante. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Curabitur vitae diam non enim vestibulum interdum. Pellentesque sapien. Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Aenean vel massa quis mauris vehicula lacinia. Aliquam ante. In enim a arcu imperdiet malesuada. Nullam feugiat.</p>
-                <img class="img__archviz" src="./images/Archviz.jpg" alt="EndlessEngines challenge">
-            </div>
-
-            
-        </section>
-
-        
-        
+      <div class="skills__item skills__item--img-modeling" id="skills" >
+        <div class="item__flex">
+            <h2 class="item__title">3D modeling</h2>
+            <p class="item__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam ante. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Curabitur vitae diam non enim vestibulum interdum. Pellentesque sapien. Sed vel lectus.</p>
+        </div>
     </div>
-    
-</div>
 
-<h3>Gallery</h3>
+      <div class="skills__item skills__item--img-anim" >
+          <div class="item__flex">
+              <h2 class="item__title">Animation</h2>
+              <p class="item__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam ante. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Curabitur vitae diam non enim vestibulum interdum. Pellentesque sapien. Sed vel lectus.</p>
+          </div>
+      </div>
 
-<div id="skills" class="gallery__container">
+      <div class="skills__item skills__item--img-archviz" >
+        <div class="item__flex">
+            <h2 class="item__title">Archviz</h2>
+            <p class="item__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam ante. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Curabitur vitae diam non enim vestibulum interdum. Pellentesque sapien. Sed vel lectus.</p>
+        </div>
+    </div>
+
+    <div class="skills__item skills__item--img-product" >
+      <div class="item__flex">
+          <h2 class="item__title">Skill</h2>
+          <p class="item__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam ante. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Curabitur vitae diam non enim vestibulum interdum. Pellentesque sapien. Sed vel lectus.</p>
+      </div>
+  </div>
+  </div>
+</section>
+
+<h3 id="gallery" >Gallery</h3>
+
+<div class="gallery__container">
   <div class="gallery">
     <article class='gallery'>
         
