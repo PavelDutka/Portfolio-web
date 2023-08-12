@@ -197,8 +197,6 @@ font-weight: 600;
   position: relative;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
       0 4px 6px -4px rgba(0, 0, 0, 0.1);
-
-  margin: -10px;
 }
 
 .logo_anim {
@@ -262,7 +260,7 @@ footer{
 
 }
 .socials a:hover i{
-  color: aqua;
+  color: rgb(77, 77, 77);
 }
 
 .footer-bottom{
@@ -543,7 +541,7 @@ button.mfp-close:active {
 
 
 .skills {
-  max-width: 1600px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -568,9 +566,9 @@ button.mfp-close:active {
   margin-top: 1em;
 }
 
+
 .skills__item {
-  display: flex;
-  
+  display: flex;  
   flex-direction: column;
   margin-bottom: 4em;
 }
@@ -578,6 +576,7 @@ button.mfp-close:active {
 .skills__item--header {
   display: block;
   margin: 5em 0em;
+  text-align: center;
 }
 
 .skills__item::before{
@@ -592,28 +591,30 @@ button.mfp-close:active {
   min-height: 10em;
   background-image: unset;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;  
 }
 
 .skills__item--img-modeling::before {
-  background-image: url(../images/Boeing_737.png);
+  background-image: url(../images/Boeing_737.webp);
   background-position: center;
 }
 
 
 .skills__item--img-anim::before {
-  background: url(../images/EndlessEngines.jpg);
+  background: url(../images/EndlessEngines_fhd.webp);
   background-position: center;
 }
 
 .skills__item--img-archviz::before {
-  background: url(../images/Archviz.jpg);
+  background: url(../images/Archviz_fhd.webp);
   background-position: center;
 }
 
 .skills__item--img-product::before {
   background: url(../images/Pen.jpg);
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 
