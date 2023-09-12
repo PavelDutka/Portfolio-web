@@ -16,7 +16,49 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:300,600'>
    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css'>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+   <script>
+    function Utils() {}
+        Utils.prototype = {
+            constructor: Utils,
+            isElementInView: function (element, fullyInView) {
+                var pageTop = $(window).scrollTop();
+                var pageBottom = pageTop + $(window).height();
+                var elementTop = $(element).offset().top;
+                var elementBottom = elementTop + $(element).height();
 
+                if (fullyInView === true) {
+                    return ((pageTop < elementTop) && (pageBottom > elementBottom));
+                } else {
+                    return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
+                }
+            }
+        };
+
+        var Utils = new Utils();
+        $(window).on('load', addFadeIn());
+        
+        $(window).scroll(function() {
+            addFadeIn(true);
+        });
+
+function addFadeIn(repeat) {
+            var classToFadeIn = ".will-fadeIn";
+            
+            $(classToFadeIn).each(function( index ) {
+                var isElementInView = Utils.isElementInView($(this), false);
+                if (isElementInView) {
+                    if(!($(this).hasClass('fadeInRight')) && !($(this).hasClass('fadeInLeft'))) {
+                        if(index % 2 == 0) $(this).addClass('fadeInRight');
+                        else $(this).addClass('fadeInLeft');
+                    }
+                } else if(repeat) {
+                    $(this).removeClass('fadeInRight');
+                    $(this).removeClass('fadeInLeft');
+                }
+            });
+        }
+   </script>
 </head>
 <body>
     <header>
@@ -74,6 +116,7 @@ menuItems.forEach(item => {
 
 </script>
 
+
 <section class="video" id="video">
     <video autoplay muted class="logo_anim">
       <source src="./images/Animation.mp4" type="video/mp4">
@@ -95,28 +138,28 @@ menuItems.forEach(item => {
 
      
 
-      <div class="skills__item skills__item--img-modeling" id="skills" >
+      <div class="will-fadeIn skills__item skills__item--img-modeling" id="skills" >
         <div class="item__flex">
             <h2 class="item__title">3D modeling</h2>
             <p class="item__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam ante. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Curabitur vitae diam non enim vestibulum interdum. Pellentesque sapien. Sed vel lectus.</p>
         </div>
     </div>
 
-      <div class="skills__item skills__item--img-anim" >
+      <div class="will-fadeIn skills__item skills__item--img-anim" >
           <div class="item__flex">
               <h2 class="item__title">Animation</h2>
               <p class="item__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam ante. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Curabitur vitae diam non enim vestibulum interdum. Pellentesque sapien. Sed vel lectus.</p>
           </div>
       </div>
 
-      <div class="skills__item skills__item--img-archviz" >
+      <div class="will-fadeIn skills__item skills__item--img-archviz" >
         <div class="item__flex">
             <h2 class="item__title">Archviz</h2>
             <p class="item__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam ante. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Curabitur vitae diam non enim vestibulum interdum. Pellentesque sapien. Sed vel lectus.</p>
         </div>
     </div>
 
-    <div class="skills__item skills__item--img-product" >
+    <div class="will-fadeIn skills__item skills__item--img-product" >
       <div class="item__flex">
           <h2 class="item__title">Product renders</h2>
           <p class="item__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam ante. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Curabitur vitae diam non enim vestibulum interdum. Pellentesque sapien. Sed vel lectus.</p>
