@@ -1,0 +1,51 @@
+[root@serverus ~]# service puppetserver reload
+Redirecting to /bin/systemctl reload puppetserver.service
+Job for puppetserver.service failed because the control process exited with error code.
+See "systemctl status puppetserver.service" and "journalctl -xeu puppetserver.service" for details.
+[root@serverus ~]# systemctl status puppetserver.service
+● puppetserver.service - puppetserver Service
+     Loaded: loaded (/usr/lib/systemd/system/puppetserver.service; enabled; preset: disabled)
+     Active: activating (start) since Sun 2025-02-02 15:26:06 CET; 5s ago
+Cntrl PID: 16736 (bash)
+      Tasks: 18 (limit: 4915)
+     Memory: 230.3M
+        CPU: 10.996s
+     CGroup: /system.slice/puppetserver.service
+             ├─16736 bash /opt/puppetlabs/server/apps/puppetserver/cli/apps/start
+             ├─16764 /usr/bin/java -Xms2g -Xmx2g -Djruby.logger.class=com.puppetlabs.jruby_utils.jruby.Slf4jLogger -Dlo>
+             └─16791 sleep 1
+
+Feb 02 15:26:06 serverus systemd[1]: Starting puppetserver Service...
+
+[root@serverus ~]# journalctl -xeu puppetserver.service
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: https://access.redhat.com/support
+░░
+░░ Automatic restarting of the unit puppetserver.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Feb 02 15:26:06 serverus systemd[1]: Stopped puppetserver Service.
+░░ Subject: A stop job for unit puppetserver.service has finished
+░░ Defined-By: systemd
+░░ Support: https://access.redhat.com/support
+░░
+░░ A stop job for unit puppetserver.service has finished.
+░░
+░░ The job identifier is 17536 and the job result is done.
+Feb 02 15:26:06 serverus systemd[1]: puppetserver.service: Consumed 1min 13.201s CPU time.
+░░ Subject: Resources consumed by unit runtime
+░░ Defined-By: systemd
+░░ Support: https://access.redhat.com/support
+░░
+░░ The unit puppetserver.service completed and consumed the indicated resources.
+Feb 02 15:26:06 serverus systemd[1]: Starting puppetserver Service...
+░░ Subject: A start job for unit puppetserver.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://access.redhat.com/support
+░░
+░░ A start job for unit puppetserver.service has begun execution.
+░░
+░░ The job identifier is 17536.
+Feb 02 15:26:16 serverus puppetserver[16764]: WARNING: abs already refers to: #'clojure.core/abs in namespace: medley.c>
+
+[root@serverus ~]#
